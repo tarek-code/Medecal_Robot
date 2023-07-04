@@ -68,6 +68,26 @@ void loop()
 if (Serial.available()) {
   i= Serial.read();
   switch(i){
+    case 1: 
+      Firebase.setInt(fbdo, "/midcin/0/isTaken", 0);
+      
+    break;
+    case 1: 
+      Firebase.setInt(fbdo, "/midcin/0/isTaken", 1);
+      
+    break;
+    case 15:
+    
+  if (Firebase.getInt(fbdo, "/movment"))
+  {
+     i = fbdo.intData();
+     //sending data to mega 
+     
+      Serial.write(i);
+    
+    
+  }
+    break;
     case 11:
       int g=1;
       while(g){

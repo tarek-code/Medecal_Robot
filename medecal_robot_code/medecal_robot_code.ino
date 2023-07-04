@@ -9,12 +9,12 @@
 time_t start_time = time(NULL);
 
 // defines movment robot
-#define R1 5
+#define R1 7
 #define L1 6
 #define R2 9
 #define L2 10
 #define SPEED 50
-#define READY_TO_CALL 10
+
 
 
 //for medcine
@@ -50,24 +50,21 @@ const int sensor2Pin = 38;
 const int sensor3Pin = 36;
 
 // Line sensor pins for movment of robot
-const int lineSensorPin1 = A0; // Line sensor pin 1
-const int lineSensorPin2 = A1; // Line sensor pin 2
-const int lineSensorPin3 = A2; // Line sensor pin 3
-const int lineSensorPin4 = A3; // Line sensor pin 4
-const int lineSensorPin5 = A4; // Line sensor pin 5
+const int lineSensorPin1 = 31; // Line sensor pin 1
+const int lineSensorPin2 = 33; // Line sensor pin 2
+const int lineSensorPin3 = 35; // Line sensor pin 3
+const int lineSensorPin4 = 37; // Line sensor pin 4
+const int lineSensorPin5 = 39; // Line sensor pin 5
 int s1, s2, s3, s4, s5;
 int GO_read_call_statuse = 15;
 int Get_call_statuse = 0;
 
-char Buzzer_Box_number[3] = {0};
-char Led_Box_number[3] = {0};
-
-
 //function decleration
 int sensor_box_read(sensor_box_number_t sensor_box_number);
-float max_spo2_reading(); 
 void buzzer_int();
 void led_int();
+
+float max_spo2_reading(); 
 void max_setup();
 float max_temp_reading();
 void addition_int();
@@ -75,14 +72,15 @@ void lcd_int();
 void rtc_int();
 float max_heartrate_reading();
 void Robot_movement_int();
-//void stopMoving();
+void stopMoving();
 void turnRight();
 void turnLeft();
 void moveBackward();
 void moveForward();
+void Moving_On_Track();
 int getMinutes();
 int getHours();
-void Moving_On_Track();
+
 void Buzzer_Indecate_run(void);
 void  Led_Indecate_run(led_box_number_t led_box_number);
 
@@ -120,7 +118,10 @@ byte readLED = 13; //Blinks with each data read
 #define RTC_ADDRESS 0x68 
 #define MAX30102_ADDRESS 0x57 
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  // Initialize the LCD display with the corresponding pin numbers
+//lcd section 
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+//LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  // Initialize the LCD display with the corresponding pin numbers
 
 
 void setup() {
@@ -148,8 +149,8 @@ void setup() {
 }
 
 // time for medcines
-char FiristMedcineTime_Hour = 11;
-char FiristMedcineTime_Minutes = 11;
+char FiristMedcineTime_Hour = 1;
+char FiristMedcineTime_Minutes = 15;
 
 
 int Max_reading=0.0;
@@ -183,11 +184,21 @@ void loop() {
   // compare between current time and desired time
 
   Serial1.write(GO_read_call_statuse);
-  if (Serial1.available()) {
+  while (difftime(time(NULL), start_time) < 2.0) {
+          // Code to be executed during the 3 seconds
+         if (Serial1.available()) {
+          int receivedInt;
+          receivedInt = Serial1.read(); 
+     Get_call_statuse = static_cast<char>(receivedInt);
+     
     Get_call_statuse = Serial1.read();
   }
+         
+      
+        }
+  
 
-  if ( (Get_call_statuse == READY_TO_CALL) || (FiristMedcineTime_Hour == hours && FiristMedcineTime_Minutes == minutes)) {
+  if ( (Get_call_statuse == 'a' ) || (FiristMedcineTime_Hour == hours && FiristMedcineTime_Minutes == minutes)) {
     // start moving
     //red data from line follower sensor
     while(done){
@@ -409,7 +420,13 @@ else{
 
 
 
-
+void rtc_int() {
+  if (!isTimeSet()) {
+    // Set the time on the RTC module
+    setTime(1, 12, 0); // Set the time to 02:06:00
+  }
+  //setTime(1, 12, 0); // Set the time to 02:06:00
+}
 
 void setTime(int hours, int minutes, int seconds) {
   Wire.beginTransmission(RTC_ADDRESS);
@@ -500,14 +517,7 @@ void lcd_int() {
 
 }
 
-void rtc_int() {
-  if (!isTimeSet()) {
-    // Set the time on the RTC module
-    setTime(17, 17, 0); // Set the time to 02:06:00
-  }
 
-
-}
 
 float max_spo2_reading() {
 
@@ -617,14 +627,12 @@ void turnLeft() {
   analogWrite(R2, SPEED);
   analogWrite(L2, 0);
 }
-
 void turnRight() {
   analogWrite(R1, SPEED);
   analogWrite(L1, 0);
   analogWrite(R2, 0);
   analogWrite(L2, SPEED);
 }
-
 void stopMoving(void)
 {
   analogWrite(R1, 0);
@@ -632,8 +640,6 @@ void stopMoving(void)
   analogWrite(R2, 0);
   analogWrite(L2, 0);
 }
-
-
 void Moving_On_Track() {
   if (  (s2 == 1) && (s3 == 0) && (s4 == 1)  )
   {
@@ -683,8 +689,6 @@ void Moving_On_Track() {
     turnLeft();
     delay(500);
   }
-
-
 
   if ( (s1 == 1) && (s2 == 1) && (s3 == 1) && (s4 == 1) && (s5 == 0)  )
   {
@@ -751,7 +755,7 @@ void  Led_Indecate_run(led_box_number_t led_box_number) {
     case LED_BOX_FOR_MEDCINE_1:
       digitalWrite(led1Pin, HIGH);
       delay(1000);
-      // Turn off the buzzer for 1 second
+      // Turn off the led for 1 second
       digitalWrite(led1Pin, LOW);
       delay(1000);
       break;
