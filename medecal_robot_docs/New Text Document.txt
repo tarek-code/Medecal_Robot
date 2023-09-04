@@ -1,0 +1,13 @@
+RTC Function      			//done
+
+motion Function 				//done
+
+Lcd Function				//done
+
+buzzer Function 				//done
+
+IR Funcrion					//done
+
+WIFI Function				// pinding
+
+Sensor Funcrion 				done

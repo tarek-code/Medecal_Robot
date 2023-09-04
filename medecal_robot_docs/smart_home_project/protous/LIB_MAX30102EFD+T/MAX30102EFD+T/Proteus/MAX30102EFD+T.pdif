@@ -1,0 +1,184 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "MAX30102EFD+T"
+   (description "Biometric Sensors Integrated Optical Sensor")
+   (family "ANA")
+   (package "MAX30102EFDT")
+   (attribute "Datasheet Link" "https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf")
+   (attribute "Geometry.Height" "1.65mm")
+   (attribute "Manufacturer_Name" "Maxim Integrated")
+   (attribute "Manufacturer_Part_Number" "MAX30102EFD+T")
+   (attribute "Mouser Part Number" "700-MAX30102EFD+T")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX30102EFD%2bT?qs=nVS1qgv%252BQrkHA4%2FoFYriFA%3D%3D")
+   (attribute "Arrow Part Number" "MAX30102EFD+T")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/max30102efdt/maxim-integrated?region=nac")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "MAX30102EFD+T")
+    (pin "N.C._1" 1 PS)
+    (pin "SCL" 2 PS)
+    (pin "SDA" 3 PS)
+    (pin "PGND" 4 PS)
+    (pin "N.C._2" 5 PS)
+    (pin "N.C._3" 6 PS)
+    (pin "N.C._4" 7 PS)
+    (pin "N.C._5" 8 PS)
+    (pin "VLED+_1" 9 PS)
+    (pin "VLED+_2" 10 PS)
+    (pin "VDD" 11 PS)
+    (pin "GND" 12 PS)
+    (pin "$INT$" 13 PS)
+    (pin "N.C._6" 14 PS)
+   )
+  )
+  (symbol "MAX30102EFD+T"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1200 100) (pt 1200 -700) (pt 200 -700) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -600) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -600) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -500) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -400) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -300) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1400 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "MAX30102EFDT"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -1.65 2.8)
+      (pt 1.65 2.8)
+      (pt 1.65 -2.8)
+      (pt -1.65 -2.8)
+      (pt -1.65 2.8))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.6 3.8)
+      (pt 2.65 3.8)
+      (pt 2.65 -3.8)
+      (pt -3.6 -3.8)
+      (pt -3.6 3.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -0.4 2.8)
+      (pt 0.4 2.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -0.4 -2.8)
+      (pt 0.4 -2.8))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -2.6 2.4)
+      (arc (pt -2.600 2.400) (pt -2.600 2.300) (pt -2.400 2.500) (start 180.0) (sweep 180.0))
+      (pt -2.4 2.4)
+      (arc (pt -2.400 2.400) (pt -2.600 2.300) (pt -2.400 2.500) (start 180.0) (sweep .0))
+      (pt -2.6 2.4))))
+   (leg 1 (pt -1.200 2.400) (padstack 0))
+   (leg 2 (pt -1.200 1.600) (padstack 0))
+   (leg 3 (pt -1.200 0.800) (padstack 0))
+   (leg 4 (pt -1.200 0.000) (padstack 0))
+   (leg 5 (pt -1.200 -0.800) (padstack 0))
+   (leg 6 (pt -1.200 -1.600) (padstack 0))
+   (leg 7 (pt -1.200 -2.400) (padstack 0))
+   (leg 8 (pt 1.200 -2.400) (padstack 0))
+   (leg 9 (pt 1.200 -1.600) (padstack 0))
+   (leg 10 (pt 1.200 -0.800) (padstack 0))
+   (leg 11 (pt 1.200 0.000) (padstack 0))
+   (leg 12 (pt 1.200 0.800) (padstack 0))
+   (leg 13 (pt 1.200 1.600) (padstack 0))
+   (leg 14 (pt 1.200 2.400) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.350 0.750 0 0 0.000))
+   )
+   (model "MAX30102EFD+T.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

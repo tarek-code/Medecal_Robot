@@ -1,0 +1,92 @@
+#include <Wire.h>
+#include <LiquidCrystal.h>
+
+#define RTC_ADDRESS 0x68
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  // Initialize the LCD display with the corresponding pin numbers
+
+void setup() {
+  
+  Wire.begin(); // Initialize I2C communication
+  lcd.begin(16, 4);  // Initialize the LCD display with 16 columns and 2 rows
+  lcd.print("Time");  // Print a header on the LCD
+  
+  // Check if the RTC module is running for the first time
+  if (!isTimeSet()) {
+    // Set the time on the RTC module
+    setTime(2, 6, 0); // Set the time to 02:06:00
+  }
+  lcd.clear();
+}
+
+void loop() {
+  // Read the time from the RTC module
+  int seconds = getSeconds();
+  int minutes = getMinutes();
+  int hours = getHours();
+
+  // Display the time on the LCD
+  lcd.setCursor(0, 1);
+  lcd.print("Time: ");
+  if (hours < 10) lcd.print("0"); // Add leading zero if hours is single digit
+  lcd.print(hours);
+  lcd.print(":");
+  if (minutes < 10) lcd.print("0"); // Add leading zero if minutes is single digit
+  lcd.print(minutes);
+  lcd.print(":");
+  if (seconds < 10) lcd.print("0"); // Add leading zero if seconds is single digit
+  lcd.print(seconds);
+
+  delay(1000); // Delay for 1 second
+}
+
+void setTime(int hours, int minutes, int seconds) {
+  Wire.beginTransmission(RTC_ADDRESS);
+  Wire.write(0); // Control register address to set the time
+  Wire.write(decToBcd(seconds)); // Seconds
+  Wire.write(decToBcd(minutes)); // Minutes
+  Wire.write(decToBcd(hours)); // Hours (in 24-hour format)
+  Wire.endTransmission();
+}
+
+int getSeconds() {
+  Wire.beginTransmission(RTC_ADDRESS);
+  Wire.write(0); // Control register address to read the time
+  Wire.endTransmission();
+  Wire.requestFrom(RTC_ADDRESS, 1);
+  return bcdToDec(Wire.read());
+}
+
+int getMinutes() {
+  Wire.beginTransmission(RTC_ADDRESS);
+  Wire.write(1); // Control register address to read the time
+  Wire.endTransmission();
+  Wire.requestFrom(RTC_ADDRESS, 1);
+  return bcdToDec(Wire.read());
+}
+
+int getHours() {
+  Wire.beginTransmission(RTC_ADDRESS);
+  Wire.write(2); // Control register address to read the time
+  Wire.endTransmission();
+  Wire.requestFrom(RTC_ADDRESS, 1);
+  return bcdToDec(Wire.read());
+}
+
+bool isTimeSet() {
+  Wire.beginTransmission(RTC_ADDRESS);
+  Wire.write(0); // Control register address to read the seconds
+  Wire.endTransmission();
+  Wire.requestFrom(RTC_ADDRESS, 1);
+  int seconds = bcdToDec(Wire.read());
+  return (seconds != 0); // If the seconds are not zero, the time has been set before
+}
+
+// Helper functions to convert decimal to binary-coded decimal (BCD) and vice versa
+byte decToBcd(byte value) {
+  return ((value / 10 * 16) + (value % 10));
+}
+
+byte bcdToDec(byte value) {
+  return ((value / 16 * 10) + (value % 16));
+}

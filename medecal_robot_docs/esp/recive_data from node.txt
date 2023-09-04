@@ -1,0 +1,11 @@
+Serial1.println(1);
+  if (Serial1.available()) {
+    // Read data from NodeMCU
+    int value = Serial1.parseInt();
+    
+    // Print received value
+    if(value>0){
+      lcd.println(value,DEC);
+    Serial.println(value);
+   }  
+ }

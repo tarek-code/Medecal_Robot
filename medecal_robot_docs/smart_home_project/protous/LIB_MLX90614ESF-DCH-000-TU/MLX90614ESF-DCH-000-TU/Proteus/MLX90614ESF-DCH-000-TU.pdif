@@ -1,0 +1,148 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "MLX90614ESF-DCH-000-TU"
+   (description "Board Mount Temperature Sensors single pixel, 3V, medical acc., 10deg FOV, grad comp")
+   (family "ANA")
+   (package "MLX90614ESFDCH000TU")
+   (attribute "Datasheet Link" "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf")
+   (attribute "Geometry.Height" "8.88mm")
+   (attribute "Manufacturer_Name" "Melexis")
+   (attribute "Manufacturer_Part_Number" "MLX90614ESF-DCH-000-TU")
+   (attribute "Mouser Part Number" "482-90614ESFDCH000TU")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Melexis/MLX90614ESF-DCH-000-TU?qs=KuGPmAKtFKWDHgaDo0G%252Bbg%3D%3D")
+   (attribute "Arrow Part Number" "")
+   (attribute "Arrow Price/Stock" "")
+   (attribute "Mouser Testing Part Number" "")
+   (attribute "Mouser Testing Price/Stock" "")
+   (gate
+    (symbol "MLX90614ESF-DCH-000-TU")
+    (pin "SCL/VZ" 1 PS)
+    (pin "SDA/PWM" 2 PS)
+    (pin "VDD" 3 PS)
+    (pin "VSS" 4 PS)
+   )
+  )
+  (symbol "MLX90614ESF-DCH-000-TU"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 400) (pt 1000 400) (pt 1000 -500) (pt 200 -500) (pt 200 400) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 600 -700) (rot 90) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 600 600) (rot 90) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "MLX90614ESFDCH000TU"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.575 8.115)
+      (pt 5.575 8.115)
+      (pt 5.575 -3.035)
+      (pt -5.575 -3.035)
+      (pt -5.575 8.115))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -4.575 2.54)
+      (arc (pt -4.575 2.540) (pt -4.575 -2.035) (pt 4.575 7.115) (start 180.0) (sweep -180.0))
+      (pt 4.575 2.54)
+      (arc (pt 4.575 2.540) (pt -4.575 -2.035) (pt 4.575 7.115) (start 180.0) (sweep .0))
+      (pt -4.575 2.54))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -4.575 2.54)
+      (arc (pt -4.575 2.540) (pt -4.575 -2.035) (pt 4.575 7.115) (start 180.0) (sweep -180.0))
+      (pt 4.575 2.54)
+      (arc (pt 4.575 2.540) (pt -4.575 -2.035) (pt 4.575 7.115) (start 180.0) (sweep .0))
+      (pt -4.575 2.54))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -3.4 -0.66)
+      (pt -3.8 -1.06)
+      (pt -3.4 -1.46)
+      (pt -3 -1.06))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -3.4 -0.66)
+      (pt -3.8 -1.06)
+      (pt -3.4 -1.46)
+      (pt -3 -1.06))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt 0 -2.6)
+      (arc (pt 0.000 -2.600) (pt -0.050 -2.600) (pt 0.050 -2.500) (start 180.0) (sweep -90.0))
+      (pt 0 -2.5)
+      (arc (pt 0.000 -2.500) (pt -0.050 -2.600) (pt 0.050 -2.500) (start 180.0) (sweep 90.0))
+      (pt 0 -2.6))))
+   (leg 1 (pt 0.000 0.000) (padstack 1))
+   (leg 2 (pt 2.540 2.540) (padstack 0))
+   (leg 3 (pt 0.000 5.080) (padstack 0))
+   (leg 4 (pt -2.540 2.540) (padstack 0))
+   (padstack 0
+    (hole 0.65)
+    (plated true)
+    (pad (layer TCOP) (round 1.192))
+    (pad (layer INNER) (round 1.192))
+    (pad (layer BCOP) (round 1.192))
+   )
+   (padstack 1
+    (hole 0.65)
+    (plated true)
+    (pad (layer TCOP) (square 1.192))
+    (pad (layer INNER) (round 1.192))
+    (pad (layer BCOP) (square 1.192))
+   )
+   (model "MLX90614ESF-DCH-000-TU.stp"
+    (euler 0 0 0)
+    (offset 0 2.5399999618530273 0.20999999344348907)
+   )
+  )
+ )
+)

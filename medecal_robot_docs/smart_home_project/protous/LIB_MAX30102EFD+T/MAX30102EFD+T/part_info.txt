@@ -1,0 +1,9 @@
+Manufacturer=Maxim Integrated
+PartNumber=MAX30102EFD+T
+PartCategory=Integrated Circuit
+PackageCategory=Other
+PinCount=14
+Version=1.2
+Released=2019-10-07 00:15:46
+Downloaded=2022-12-05 00:38:23
+3D=Y

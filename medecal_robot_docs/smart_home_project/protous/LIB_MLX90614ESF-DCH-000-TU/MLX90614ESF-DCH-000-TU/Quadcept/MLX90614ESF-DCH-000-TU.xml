@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--/743846/965719/2.49/4/3/Integrated Circuit/-->
+<quadcept_library>
+  <setting unit="mil" />
+  <textstyle name="Default" height="47.244094488189" strokewidth="7.8740157480315" charwidth="47.244094488189" />
+  <textstyle name="Dimension" height="19.6850393700787" strokewidth="0" charwidth="19.6850393700787" />
+  <textstyle name="H127W0635TH00762" height="50" strokewidth="3" charwidth="25" />
+  <textstyle name="H15W15TH02" height="59.0551181102362" strokewidth="7.8740157480315" charwidth="59.0551181102362" />
+  <padstyle name="c119.2_h65" surface="False" plated="True" isvia="False" nopaste="True" nomask="True" complex="False" holesize="25.590551181102">
+    <padshape layer="TOP" shape="round" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="TOP_SOLDER_MASK" shape="round" width="54.803149606299" height="54.803149606299" />
+    <padshape layer="INNER" shape="round" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="BOTTOM" shape="round" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="BOTTOM_SOLDER_MASK" shape="round" width="54.803149606299" height="54.803149606299" />
+  </padstyle>
+  <padstyle name="s119.2_h65" surface="False" plated="True" isvia="False" nopaste="True" nomask="True" complex="False" holesize="25.590551181102">
+    <padshape layer="TOP" shape="square" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="TOP_SOLDER_MASK" shape="square" width="54.803149606299" height="54.803149606299" />
+    <padshape layer="INNER" shape="square" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="BOTTOM" shape="square" width="46.929133858267" height="46.929133858267" />
+    <padshape layer="BOTTOM_SOLDER_MASK" shape="square" width="54.803149606299" height="54.803149606299" />
+  </padstyle>
+  <footprint name="MLX90614ESFDCH000TU" originx="0" originy="0" pickpointx="0" pickpointy="0">
+    <pcbpin number="1" name="1" style="s119.2_h65" originx="0" originy="0" rotation="90" />
+    <pcbpin number="2" name="2" style="c119.2_h65" originx="99.999999999999" originy="99.999999999999" rotation="90" />
+    <pcbpin number="3" name="3" style="c119.2_h65" originx="0" originy="200" rotation="90" />
+    <pcbpin number="4" name="4" style="c119.2_h65" originx="-99.999999999999" originy="99.999999999999" rotation="90" />
+    <line layer="TOP_PLACE_BOUND" originx="-219.48818897638" originy="319.48818897637" endx="219.48818897638" endy="319.48818897637" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="219.48818897638" originy="319.48818897637" endx="219.48818897638" endy="-119.48818897638" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="219.48818897638" originy="-119.48818897638" endx="-219.48818897638" endy="-119.48818897638" width="3.9370078740157" />
+    <line layer="TOP_PLACE_BOUND" originx="-219.48818897638" originy="-119.48818897638" endx="-219.48818897638" endy="319.48818897637" width="3.9370078740157" />
+    <line layer="TOP_ASSEMBLY" originx="-180.11811023622" originy="99.999999999999" endx="-180.11811023622" endy="99.999999999999" width="3.9370078740157" />
+    <arc layer="TOP_ASSEMBLY" originx="0" originy="99.999999999999" startangle="-180.0" sweepangle="180.0" radius="180.11811023622" width="3.9370078740157" />
+    <line layer="TOP_ASSEMBLY" originx="180.11811023622" originy="99.999999999999" endx="180.11811023622" endy="99.999999999999" width="3.9370078740157" />
+    <arc layer="TOP_ASSEMBLY" originx="0" originy="99.999999999999" startangle=".0" sweepangle="180.0" radius="180.11811023622" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="-180.11811023622" originy="99.999999999999" endx="-180.11811023622" endy="99.999999999999" width="7.8740157480314" />
+    <arc layer="TOP_SILKSCREEN" originx="0" originy="99.999999999999" startangle="-180.0" sweepangle="180.0" radius="180.11811023622" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="180.11811023622" originy="99.999999999999" endx="180.11811023622" endy="99.999999999999" width="7.8740157480314" />
+    <arc layer="TOP_SILKSCREEN" originx="0" originy="99.999999999999" startangle=".0" sweepangle="180.0" radius="180.11811023622" width="7.8740157480314" />
+    <line layer="TOP_ASSEMBLY" originx="-133.85826771653" originy="-25.984251968504" endx="-149.6062992126" endy="-41.732283464566" width="3.9370078740157" />
+    <line layer="TOP_ASSEMBLY" originx="-149.6062992126" originy="-41.732283464566" endx="-133.85826771653" endy="-57.480314960629" width="3.9370078740157" />
+    <line layer="TOP_ASSEMBLY" originx="-133.85826771653" originy="-57.480314960629" endx="-118.11023622047" endy="-41.732283464566" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="-133.85826771653" originy="-25.984251968504" endx="-149.6062992126" endy="-41.732283464566" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="-149.6062992126" originy="-41.732283464566" endx="-133.85826771653" endy="-57.480314960629" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="-133.85826771653" originy="-57.480314960629" endx="-118.11023622047" endy="-41.732283464566" width="7.8740157480314" />
+    <line layer="TOP_SILKSCREEN" originx="0" originy="-102.36220472441" endx="0" endy="-102.36220472441" width="3.9370078740157" />
+    <arc layer="TOP_SILKSCREEN" originx="1.6391087961985E-15" originy="-100.3937007874" startangle="-90.0" sweepangle="180.0" radius="1.9685039370079" width="3.9370078740157" />
+    <line layer="TOP_SILKSCREEN" originx="0" originy="-98.425196850392" endx="0" endy="-98.425196850392" width="3.9370078740157" />
+    <arc layer="TOP_SILKSCREEN" originx="1.6391087961985E-15" originy="-100.3937007874" startangle="90.0" sweepangle="180.0" radius="1.9685039370079" width="3.9370078740157" />
+  </footprint>
+  <symbol name="MLX90614ESF-DCH-000-TU" originx="0" originy="0">
+    <line originx="200" originy="400" endx="1000" endy="400" width="0" />
+    <line originx="1000" originy="-500" endx="1000" endy="400" width="0" />
+    <line originx="1000" originy="-500" endx="200" endy="-500" width="0" />
+    <line originx="200" originy="400" endx="200" endy="-500" width="0" />
+    <sympin number="1" originx="600" originy="-500" rotation="270" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="600" originy="-470" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="SCL/VZ" />
+      <text name="pindes" originx="580" originy="-560" style="Default" rotation="0" justify="lowerright" flipped="False" hidden="False" data="1" />
+    </sympin>
+    <sympin number="2" originx="1000" originy="0" rotation="0" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="970" originy="0" style="Default" rotation="0" justify="right" flipped="False" hidden="False" data="SDA/PWM" />
+      <text name="pindes" originx="1060" originy="20" style="Default" rotation="0" justify="lowerleft" flipped="False" hidden="False" data="2" />
+    </sympin>
+    <sympin number="3" originx="600" originy="400" rotation="90" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="600" originy="370" style="Default" rotation="0" justify="right" flipped="False" hidden="False" data="VDD" />
+      <text name="pindes" originx="580" originy="460" style="Default" rotation="0" justify="lowerleft" flipped="False" hidden="False" data="3" />
+    </sympin>
+    <sympin number="4" originx="200" originy="0" rotation="180" length="100" width="7.8740157480315" flipped="False">
+      <text name="pinname" originx="230" originy="0" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="VSS" />
+      <text name="pindes" originx="140" originy="20" style="Default" rotation="0" justify="lowerright" flipped="False" hidden="False" data="4" />
+    </sympin>
+  </symbol>
+  <component name="MLX90614ESF-DCH-000-TU" designatorprefix="IC" height="349.60629921259" footprint="MLX90614ESFDCH000TU">
+    <comppin designator="1" sympin="1" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="SCL/VZ" />
+    <comppin designator="2" sympin="2" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="SDA/PWM" />
+    <comppin designator="3" sympin="3" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="VDD" />
+    <comppin designator="4" sympin="4" pinswap="0" gateswap="0" gate="1" group="1" side="" type="Any" name="VSS" />
+    <attached_symbol gate="1" name="MLX90614ESF-DCH-000-TU" />
+    <pinmap designator="1" footprintpin="1" />
+    <pinmap designator="2" footprintpin="2" />
+    <pinmap designator="3" footprintpin="3" />
+    <pinmap designator="4" footprintpin="4" />
+    <text name="Datasheet" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf" />
+    <text name="Description" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="Board Mount Temperature Sensors single pixel, 3V, medical acc., 10deg FOV, grad comp" />
+    <text name="Manufacturer_Name" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="Melexis" />
+    <text name="Manufacturer_Part_Number" originx="1050" originy="500" style="Default" rotation="0" justify="left" flipped="False" hidden="False" data="MLX90614ESF-DCH-000-TU" />
+    <text name="Mouser Part Number" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="482-90614ESFDCH000TU" />
+    <text name="Mouser Price/Stock" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="https://www.mouser.co.uk/ProductDetail/Melexis/MLX90614ESF-DCH-000-TU?qs=KuGPmAKtFKWDHgaDo0G%252Bbg%3D%3D" />
+    <text name="Arrow Part Number" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="" />
+    <text name="Arrow Price/Stock" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="" />
+    <text name="Mouser Testing Part Number" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="" />
+    <text name="Mouser Testing Price/Stock" originx="0" originy="0" style="Default" rotation="0" justify="" flipped="False" hidden="True" data="" />
+  </component>
+</quadcept_library>

@@ -1,0 +1,9 @@
+Manufacturer=Melexis
+PartNumber=MLX90614ESF-DCH-000-TU
+PartCategory=Integrated Circuit
+PackageCategory=Other
+PinCount=4
+Version=1.2
+Released=2021-07-26 14:29:22
+Downloaded=2022-12-05 00:17:45
+3D=Y

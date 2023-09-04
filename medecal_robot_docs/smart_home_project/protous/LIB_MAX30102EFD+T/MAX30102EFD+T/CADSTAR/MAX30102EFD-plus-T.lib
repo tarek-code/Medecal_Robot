@@ -1,0 +1,20 @@
+.MAX30102EFD-plus-T :1 ;Biometric Sensors Integrated Optical Sensor
+MAX30102EFDT
+*STM IC
+*NGS
+*PLB 1="N.C._1" 2="SCL" 3="SDA" 4="PGND" 5="N.C._2" 6="N.C._3" 7="N.C._4" 8="N.C._5" 9="VLED+_1" 10="VLED+_2" 11="VDD" 12="GND" 13="'INT'" 14="N.C._6"
+*MXP 14
+*DFN MAX30102EFD-plus-T
+~!Manufacturer_Name (Maxim Integrated)
+~!Manufacturer_Part_Number (MAX30102EFD+T)
+~!Mouser Part Number (700-MAX30102EFD+T)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX30102EFD%2bT?qs=nVS1qgv%252BQrkHA4%2FoFYriFA%3D%3D)
+~!Arrow Part Number (MAX30102EFD+T)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/max30102efdt/maxim-integrated?region=nac)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf)
+~!Height (1.65mm)
+~!3D_Model (MAX30102EFD+T)
+MAX30102EFD-plus-T
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 10.1!U 11.1!U 12.1!U 13.1!U 14.1!U 

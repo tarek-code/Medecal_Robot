@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'MLX90614ESF_DCH_000_TU'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "MOUSER_TESTING_PART_NUMBER", "MOUSER_TESTING_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Melexis", "MLX90614ESF-DCH-000-TU" (!) = "", "MLX90614ESFDCH000TU", "Other", "482-90614ESFDCH000TU", "https://www.mouser.co.uk/ProductDetail/Melexis/MLX90614ESF-DCH-000-TU?qs=KuGPmAKtFKWDHgaDo0G%252Bbg%3D%3D", "", "", "", "", "Board Mount Temperature Sensors single pixel, 3V, medical acc., 10deg FOV, grad comp", "https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf", "8.88 mm"
+END_PART
+
+END.

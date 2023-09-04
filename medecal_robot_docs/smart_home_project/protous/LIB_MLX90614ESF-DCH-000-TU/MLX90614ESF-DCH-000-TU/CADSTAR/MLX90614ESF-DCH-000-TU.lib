@@ -1,0 +1,20 @@
+.MLX90614ESF-DCH-000-TU :1 ;Board Mount Temperature Sensors single pixel, 3V, medical acc., 10deg FOV, grad comp
+MLX90614ESFDCH000TU
+*STM IC
+*NGS
+*PLB 1="SCL/VZ" 2="SDA/PWM" 3="VDD" 4="VSS"
+*MXP 4
+*DFN MLX90614ESF-DCH-000-TU
+~!Manufacturer_Name (Melexis)
+~!Manufacturer_Part_Number (MLX90614ESF-DCH-000-TU)
+~!Mouser Part Number (482-90614ESFDCH000TU)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Melexis/MLX90614ESF-DCH-000-TU?qs=KuGPmAKtFKWDHgaDo0G%252Bbg%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Mouser Testing Part Number (-)
+~!Mouser Testing Price/Stock (-)
+~!Link Datasheet (https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf)
+~!Height (8.88mm)
+~!3D_Model (MLX90614ESF-DCH-000-TU)
+MLX90614ESF-DCH-000-TU
+1.1!U 2.1!U 3.1!U 4.1!U 

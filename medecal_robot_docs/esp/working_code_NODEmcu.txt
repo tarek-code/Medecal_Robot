@@ -1,0 +1,246 @@
+#if defined(ESP32)
+#include <WiFi.h>
+#include <FirebaseESP32.h>
+#elif defined(ESP8266)
+#include <ESP8266WiFi.h>
+#include <FirebaseESP8266.h>
+#elif defined(ARDUINO_RASPBERRY_PI_PICO_W)
+#include <WiFi.h>
+#include <FirebaseESP8266.h>
+#endif
+
+
+
+/* 1. Define the WiFi credentials */
+#define WIFI_SSID "vfsrvgrweg"
+#define WIFI_PASSWORD "tarekadel12345....=ALIBADEEAHMEDKAMEL*20-201902719_O6U"
+
+/* 2. Define the API Key */
+#define API_KEY "AIzaSyCnrNZT1l47vCHHi1FzbTwlPa2SiVIHhCI"
+
+/* 3. Define the RTDB URL */
+#define DATABASE_URL "nodeesp-b0df4-default-rtdb.europe-west1.firebasedatabase.app"
+
+/* 4. Define the user Email and password */
+#define USER_EMAIL "pootyoop14@gmail.com"
+#define USER_PASSWORD "pootyoop"
+
+
+
+// Define Firebase Data object
+FirebaseData fbdo;
+FirebaseJson json;
+
+FirebaseAuth auth;
+FirebaseConfig config;
+
+
+
+void setup()
+{
+  Serial.begin(115200);
+
+  // Connect to Wi-Fi
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println();
+  Serial.print("Connected to Wi-Fi. IP Address: ");
+  Serial.println(WiFi.localIP());
+
+  // Initialize Firebase
+  config.api_key = API_KEY;
+  auth.user.email = USER_EMAIL;
+  auth.user.password = USER_PASSWORD;
+  config.database_url = DATABASE_URL;
+
+  Firebase.begin(&config, &auth);
+}
+float i=0;
+void loop()
+{
+/*
+// Read the int value from Firebase
+int i=0;
+  if (Firebase.getInt(fbdo, "/Pass"))
+  {
+     i = fbdo.intData();
+  }
+
+    // Store the value in the "/counter" path in Firebase
+    if (Firebase.setInt(fbdo, "/counter", i))
+    {
+      Serial.println("Counter value updated in Firebase.");
+    }
+*/
+
+  /*
+  // Read the float value from Firebase
+  float i=0.0;
+  if (Firebase.getInt(fbdo, "/Pass"))
+  {
+     i = fbdo.floatData();
+  }
+
+    // Store the value in the "/counter" path in Firebase
+    if (Firebase.setFloat(fbdo, "/counter", i))
+    {
+      Serial.println("Counter value updated in Firebase.");
+    }
+    */
+    /*
+String name;
+    // Read the String value from Firebase
+  if (Firebase.getString(fbdo, "/Pass"))
+  {
+    name = fbdo.stringData();
+  }
+
+    // Store the value in the "/counter" path in Firebase
+    if (Firebase.setString(fbdo, "/counter", name))
+    {
+      Serial.println("Counter value updated in Firebase.");
+    }
+
+*/
+
+
+/*
+// send Sreing to firebase
+
+ 
+String name="Tarek Adel";
+// write int to firebase 
+Firebase.setString(fbdo, "/counter", name);
+*/
+
+//still worke on it 
+/*
+if (Serial.available()) {
+    String receivedData = Serial.readStringUntil('\n');
+    receivedData.trim();
+    
+    
+    
+    // Send data to Firebase
+    Firebase.setString(fbdo, "/counter", receivedData);
+    
+    
+  }
+*/
+
+  
+/*
+// send int value to firebase
+int i=0;
+Firebase.setInt(fbdo, "/counter", i);
+i++;
+*/
+
+
+/*
+// recive int value from mega & sending int to firebase
+if (Serial.available()) 
+{
+    int receivedNumber = Serial.parseInt(); // Read the received integer from Serial
+    Firebase.setInt(fbdo, "/counter", receivedNumber);
+    Serial.print("Received number: ");
+    Serial.println(receivedNumber);
+  }
+*/
+
+
+/*
+// send float to firebase
+
+//float i=0.0;
+// write int to firebase 
+Firebase.setFloat(fbdo, "/counter", i);
+i+=1.8;
+*/
+
+/*
+// recive float value from mega & sending int to firebase
+if (Serial.available()) 
+{
+    float receivedNumber = Serial.parseFloat(); // Read the received integer from Serial
+    Firebase.setFloat(fbdo, "/counter", receivedNumber);
+    Serial.print("Received number: ");
+    Serial.println(receivedNumber);
+  }
+*/
+
+  delay(1000); // Wait for 5 seconds before sending the next set of data
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for sender from arduino nega2560
+/*
+
+#include <Arduino.h>
+#include <SoftwareSerial.h>
+
+//SoftwareSerial mySerial(15, 14);  // RX, TX
+void setup() {
+  Serial1.begin(115200); // Initialize Serial communication at 115200 baud
+//  mySerial.begin(9600); 
+}
+int variableToSend = 0;
+void loop() {
+    // Example variable to send
+  Serial1.println(variableToSend); // Send the variable over Serial
+   variableToSend ++;
+  delay(1000); // Wait for 1 second before sending the next data
+}
+
+
+// change Serial1.begin
+// change Serial.begin
+// change Serial2.begin
+// Arduino Mega 2560 pin mapping for SoftwareSerial
+// RX0 - digital pin 0
+// TX0 - digital pin 1
+// RX1 - digital pin 19
+// TX1 - digital pin 18
+// RX2 - digital pin 17
+// TX2 - digital pin 16
+// RX3 - digital pin 15
+// TX3 - digital pin 14
+// RX4 - digital pin 13
+// TX4 - digital pin 12
+// RX5 - digital pin 48
+// TX5 - digital pin 46
+// RX6 - digital pin 47
+// TX6 - digital pin 45
+// RX7 - digital pin 50
+// TX7 - digital pin 48
+
+
+
+*/

@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "MLX90614ESF-DCH-000-TU"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-07-26-14:29:22)
+    (mountForm default
+        (footprintRef "MLX90614ESFDCH000TU")
+        (spec "System")
+    )
+)

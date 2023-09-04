@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MLX90614ESF-DCH-000-TU
+D Board Mount Temperature Sensors single pixel, 3V, medical acc., 10deg FOV, grad comp
+K
+F https://www.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf
+$ENDCMP
+#
+#End Doc Library

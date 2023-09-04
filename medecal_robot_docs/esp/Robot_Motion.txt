@@ -1,0 +1,272 @@
+// Motor 1
+int RPWM1_Output = 5; // Arduino pin connected to RPWM of BTS7960 module 1
+int LPWM1_Output = 6; // Arduino pin connected to LPWM of BTS7960 module 1
+
+// Motor 2
+int RPWM2_Output = 9; // Arduino pin connected to RPWM of BTS7960 module 2
+int LPWM2_Output = 10; // Arduino pin connected to LPWM of BTS7960 module 2
+
+void setup() {
+  pinMode(RPWM1_Output, OUTPUT);
+  pinMode(LPWM1_Output, OUTPUT);
+  pinMode(RPWM2_Output, OUTPUT);
+  pinMode(LPWM2_Output, OUTPUT);
+}
+
+void loop() {
+  moveForward();
+  delay(2000);
+
+  moveBackward();
+  delay(2000);
+
+  turnRight();
+  delay(2000);
+
+  turnLeft();
+  delay(2000);
+}
+
+void moveForward() {
+  analogWrite(LPWM1_Output, 0); // Set LPWM1 to 0 for forward rotation
+  analogWrite(RPWM1_Output, 255); // Set RPWM1 to 255 for maximum speed
+
+  analogWrite(LPWM2_Output, 0); // Set LPWM2 to 0 for forward rotation
+  analogWrite(RPWM2_Output, 255); // Set RPWM2 to 255 for maximum speed
+}
+
+void moveBackward() {
+  analogWrite(LPWM1_Output, 255); // Set LPWM1 to 255 for backward rotation
+  analogWrite(RPWM1_Output, 0); // Set RPWM1 to 0 for maximum speed
+
+  analogWrite(LPWM2_Output, 255); // Set LPWM2 to 255 for backward rotation
+  analogWrite(RPWM2_Output, 0); // Set RPWM2 to 0 for maximum speed
+}
+
+void turnRight() {
+  analogWrite(LPWM1_Output, 0); // Set LPWM1 to 0 for forward rotation
+  analogWrite(RPWM1_Output, 255); // Set RPWM1 to 255 for maximum speed
+
+  analogWrite(LPWM2_Output, 255); // Set LPWM2 to 255 for backward rotation
+  analogWrite(RPWM2_Output, 0); // Set RPWM2 to 0 for maximum speed
+}
+
+void turnLeft() {
+  analogWrite(LPWM1_Output, 255); // Set LPWM1 to 255 for backward rotation
+  analogWrite(RPWM1_Output, 0); // Set RPWM1 to 0 for maximum speed
+
+  analogWrite(LPWM2_Output, 0); // Set LPWM2 to 0 for forward rotation
+  analogWrite(RPWM2_Output, 255); // Set RPWM2 to 255 for maximum speed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//under test 
+#include <Arduino.h>
+#define SPEED 50
+// Motor 1
+int RPWM1_Output = 5; // Arduino pin connected to RPWM of BTS7960 module 1
+int LPWM1_Output = 6; // Arduino pin connected to LPWM of BTS7960 module 1
+
+// Motor 2
+int RPWM2_Output = 9; // Arduino pin connected to RPWM of BTS7960 module 2
+int LPWM2_Output = 10; // Arduino pin connected to LPWM of BTS7960 module 2
+
+
+// Line sensor pins
+const int lineSensorPin1 = A0; // Line sensor pin 1
+const int lineSensorPin2 = A1; // Line sensor pin 2
+const int lineSensorPin3 = A2; // Line sensor pin 3
+const int lineSensorPin4 = A3; // Line sensor pin 4
+const int lineSensorPin5 = A4; // Line sensor pin 5
+
+
+// Threshold value for line detection
+const int threshold = 500;
+void setup() {
+  // Serial.begin(9600);
+  
+  pinMode(RPWM1_Output, OUTPUT);
+  pinMode(LPWM1_Output, OUTPUT);
+  pinMode(RPWM2_Output, OUTPUT);
+  pinMode(LPWM2_Output, OUTPUT);
+
+  pinMode(lineSensorPin1, INPUT);
+  pinMode(lineSensorPin2, INPUT);
+  pinMode(lineSensorPin3, INPUT);
+  pinMode(lineSensorPin4, INPUT);
+  pinMode(lineSensorPin5, INPUT);
+}
+
+void loop() {
+  
+   //Reading Sensor Values
+  int s1 = digitalRead(lineSensorPin1);  //Left Most Sensor
+  int s2 = digitalRead(lineSensorPin2);  //Left Sensor
+  int s3 = digitalRead(lineSensorPin3);  //Middle Sensor
+  int s4 = digitalRead(lineSensorPin4);  //Right Sensor
+  int s5 = digitalRead(lineSensorPin5);  //Right Most Sensor
+
+  //if only middle sensor detects black line
+  if((s1 == 1) && (s2 == 1) && (s3 == 0) && (s4 == 1) && (s5 == 1))
+  {
+    //going forward with full speed 
+    moveForward();
+   // Serial.println("moveForward");
+  }
+  
+  //if only left sensor detects black line
+  if((s1 == 1) && (s2 == 0) && (s3 == 1) && (s4 == 1) && (s5 == 1))
+  {
+    //going right with full speed 
+    turnRight();
+  //  Serial.println("turnRight1");
+  }
+  
+  //if only left most sensor detects black line
+  if((s1 == 0) && (s2 == 1) && (s3 == 1) && (s4 == 1) && (s5 == 1))
+  {
+    //going right with full speed 
+    turnRight();
+  //  Serial.println("turnRight1");
+  }
+
+  //if only right sensor detects black line
+  if((s1 == 1) && (s2 == 1) && (s3 == 1) && (s4 == 0) && (s5 == 1))
+  {
+    //going left with full speed 
+    turnLeft();
+   // Serial.println("turnLeft2");
+  }
+
+  //if only right most sensor detects black line
+  if((s1 == 1) && (s2 == 1) && (s3 == 1) && (s4 == 1) && (s5 == 0))
+  {
+    //going left with full speed 
+    turnLeft();
+  //  Serial.println("turnLeft3");
+  }
+
+  //if middle and right sensor detects black line
+  if((s1 == 1) && (s2 == 1) && (s3 == 0) && (s4 == 0) && (s5 == 1))
+  {
+    //going left with full speed 
+    turnLeft();
+  //  Serial.println("turnLeft4");
+  }
+
+  //if middle and left sensor detects black line
+  if((s1 == 1) && (s2 == 0) && (s3 == 0) && (s4 == 1) && (s5 == 1))
+  {
+    //going right with full speed 
+    turnRight();
+   // Serial.println("turnRight2");
+  }
+
+  //if middle, left and left most sensor detects black line
+  if((s1 == 0) && (s2 == 0) && (s3 == 0) && (s4 == 1) && (s5 == 1))
+  {
+    //going right with full speed 
+    turnRight();
+  //  Serial.println("turnRight3");
+  }
+
+  //if middle, right and right most sensor detects black line
+  if((s1 == 1) && (s2 == 1) && (s3 == 0) && (s4 == 0) && (s5 == 0))
+  {
+    //going left with full speed 
+    turnLeft();
+  //  Serial.println("turnLeft5");
+  }
+
+  //if all sensors are on a black line
+  if((s1 == 0) && (s2 == 0) && (s3 == 0) && (s4 == 0) && (s5 == 0))
+  {
+    //stop
+    stopMoving();
+  //  Serial.println("stopMoving");
+  }
+  
+  // If no sensors detect the black line
+  if ((s1 == 1) && (s2 == 1) && (s3 == 1) && (s4 == 1) && (s5 == 1)) {
+    // Going backward with full speed
+    stopMoving();
+    Serial.println("moveBackward");
+    
+  }
+ 
+  
+}
+
+
+void turnLeft() {
+  analogWrite(LPWM1_Output, 0); // Set LPWM1 to 0 for forward rotation
+  analogWrite(RPWM1_Output, SPEED); // Set RPWM1 to 255 for maximum speed
+
+  analogWrite(LPWM2_Output, 0); // Set LPWM2 to 0 for forward rotation
+  analogWrite(RPWM2_Output, SPEED); // Set RPWM2 to 255 for maximum speed
+}
+
+void turnRight() {
+  analogWrite(LPWM1_Output, SPEED); // Set LPWM1 to 255 for backward rotation
+  analogWrite(RPWM1_Output, 0); // Set RPWM1 to 0 for maximum speed
+
+  analogWrite(LPWM2_Output, SPEED); // Set LPWM2 to 255 for backward rotation
+  analogWrite(RPWM2_Output, 0); // Set RPWM2 to 0 for maximum speed
+}
+
+void moveBackward() {
+  analogWrite(LPWM1_Output, 0); // Set LPWM1 to 0 for forward rotation
+  analogWrite(RPWM1_Output, SPEED); // Set RPWM1 to 255 for maximum speed
+
+  analogWrite(LPWM2_Output, SPEED); // Set LPWM2 to 255 for backward rotation
+  analogWrite(RPWM2_Output, 0); // Set RPWM2 to 0 for maximum speed
+}
+
+void moveForward() {
+  analogWrite(LPWM1_Output, SPEED); // Set LPWM1 to 255 for backward rotation
+  analogWrite(RPWM1_Output, 0); // Set RPWM1 to 0 for maximum speed
+
+  analogWrite(LPWM2_Output, 0); // Set LPWM2 to 0 for forward rotation
+  analogWrite(RPWM2_Output, SPEED); // Set RPWM2 to 255 for maximum speed
+}
+
+void stopMoving() {
+  analogWrite(LPWM1_Output, 0); // Set LPWM1 to 0 for stopping left motor
+  analogWrite(RPWM1_Output, 0); // Set RPWM1 to 0 for stopping left motor
+
+  analogWrite(LPWM2_Output, 0); // Set LPWM2 to 0 for stopping right motor
+  analogWrite(RPWM2_Output, 0); // Set RPWM2 to 0 for stopping right motor
+}
+

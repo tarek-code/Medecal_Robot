@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'MAX30102EFD_T'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "MOUSER_TESTING_PART_NUMBER", "MOUSER_TESTING_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Maxim Integrated", "MAX30102EFD+T" (!) = "", "MAX30102EFDT", "Other", "700-MAX30102EFD+T", "https://www.mouser.co.uk/ProductDetail/Maxim-Integrated/MAX30102EFD%2bT?qs=nVS1qgv%252BQrkHA4%2FoFYriFA%3D%3D", "MAX30102EFD+T", "https://www.arrow.com/en/products/max30102efdt/maxim-integrated?region=nac", "", "", "Biometric Sensors Integrated Optical Sensor", "https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf", "1.65 mm"
+END_PART
+
+END.
